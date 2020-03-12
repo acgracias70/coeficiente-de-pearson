@@ -1,0 +1,11 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr,spearmanr
+Y=[]
+N = 100
+X = np.linspace(-1.5,1.5, N)
+for i in range(0,100,1):
+ Y.append(np.tan(X[i]))
+corr, p_value = pearsonr(X,Y) # calcula a correlação
+corr = int(corr*100)/100
+print("Correlação Pearson=",corr)
